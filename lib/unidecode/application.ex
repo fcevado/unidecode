@@ -7,7 +7,9 @@ defmodule Unidecode.Application do
     import Supervisor.Spec, warn: false
 
     children = [
-      supervisor(ConCache,[[], [name: :unidecode]])
+      supervisor(ConCache,[[], [name: :unidecode]]),
+      supervisor(Task.Supervisor, [[name: Unidecode.DataLoad.Supervisor]], [restart: :temporary]),
+      worker(Task, [Unidecode.DataLoad, :task, []], [restart: :temporary])
     ]
 
     opts = [strategy: :one_for_one, name: Unidecode.Supervisor]
