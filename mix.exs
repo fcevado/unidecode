@@ -37,7 +37,9 @@ defmodule Unidecode.Mixfile do
 
   defp deps do
     [
-      {:con_cache, "~> 0.12"}
+      {:con_cache, "~> 0.12"},
+      {:ex_doc, "~> 0.16", only: :dev},
+      {:earmark, "~> 1.2", only: :dev}
     ]
   end
 end
