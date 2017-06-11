@@ -30,7 +30,7 @@ defmodule Unidecode.Mixfile do
       name: :unidecode,
       files: ["priv", "lib/unidecode.ex", "lib/unidecode", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Flávio Moreira Vieira"],
-      license: ["Apache 2.0"],
+      licenses: ["Apache 2.0"],
       links: %{"Github" => "https://github.com/fcevado/unidecode"}
     ]
   end
