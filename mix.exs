@@ -19,10 +19,11 @@ defmodule Unidecode.Mixfile do
   end
 
   defp description do
-    """
+    ~S(
     Transliterate from Unicode to ASCII.
-    Based upon [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-1.30/lib/Text/Unidecode.pm) perl module.
-    """
+
+    Based on Text::Unidecode.
+    )
   end
 
   defp package do
@@ -31,7 +32,10 @@ defmodule Unidecode.Mixfile do
       files: ["priv", "lib/unidecode.ex", "lib/unidecode", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Flávio Moreira Vieira"],
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/fcevado/unidecode"}
+      links: %{
+        "Github" => "https://github.com/fcevado/unidecode",
+        "Text::Unidecode(Original Perl Module)" => "http://search.cpan.org/~sburke/Text-Unidecode-1.30/"
+      }
     ]
   end
 
