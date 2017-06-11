@@ -2,6 +2,7 @@ defmodule Unidecode.DataLoad do
   @moduledoc false
 
   alias Unidecode.{DataLoad, Cache}
+  require Logger
 
   def task do
     :unidecode
@@ -15,6 +16,8 @@ defmodule Unidecode.DataLoad do
   end
 
   def load_file(file) do
+    log(file)
+
     file
     |> File.stream!([:read], :line)
     |> Stream.map(&(String.split(&1, ";")))
@@ -31,5 +34,16 @@ defmodule Unidecode.DataLoad do
   defp prepare_code(code) do
     code = String.to_integer(code, 16)
     <<code::utf8>>
+  end
+
+  defp log(file) do
+    file = 
+      file
+      |> String.split(".")
+      |> List.first
+      |> String.split("/")
+      |> List.last
+
+    Logger.info("Unidecode::Loaded #{file} table to cache.")
   end
 end

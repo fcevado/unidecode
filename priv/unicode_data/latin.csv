@@ -380,7 +380,7 @@
 0241;?;latin capital letter glottal stop
 0242;?;latin small letter glottal stop
 0243;B;latin capital letter b with stroke
-0244;BAR;latin capital letter u bar
+0244;U;latin capital letter u bar
 0245;V;latin capital letter turned v
 0246;E;latin capital letter e with stroke
 0247;e;latin small letter e with stroke
@@ -412,7 +412,6 @@
 0261;g;latin small letter script g
 0262;G;latin letter small capital g
 0263;g;latin small letter gamma
-0264;horn;latin small letter rams horn
 0265;h;latin small letter turned h
 0266;h;latin small letter h with hook
 0267;h;latin small letter heng with hook
@@ -422,7 +421,6 @@
 026b;l;latin small letter l with middle tilde
 026c;l;latin small letter l with belt
 026d;l;latin small letter l with retroflex hook
-026e;lezh;latin small letter lezh
 026f;m;latin small letter turned m
 0270;m;latin small letter turned m with long leg
 0271;m;latin small letter m with hook
@@ -461,7 +459,6 @@
 0292;s;latin small letter ezh
 0293;s;latin small letter ezh with curl
 0294;?;latin letter glottal stop
-0295;fricative;latin letter pharyngeal voiced fricative
 0296;?;latin letter inverted glottal stop
 0297;c;latin letter stretched c
 0299;B;latin letter small capital b
@@ -591,7 +588,7 @@
 1dd4;ae;combining latin small letter ae
 1dd5;ao;combining latin small letter ao
 1dd6;av;combining latin small letter av
-1dd7;cedilla;combining latin small letter c cedilla
+1dd7;c;combining latin small letter c cedilla
 1dd8;d;combining latin small letter insular d
 1dd9;d;combining latin small letter eth
 1dda;g;combining latin small letter g
@@ -971,11 +968,11 @@
 24e7;x;circled latin small letter x
 24e8;y;circled latin small letter y
 24e9;z;circled latin small letter z
-271d;cross;latin cross
-271e;cross;shadowed white latin cross
-271f;cross;outlined latin cross
-2c2e;MYSLITE;glagolitic capital letter latinate myslite
-2c5e;myslite;glagolitic small letter latinate myslite
+271d;+;latin cross
+271e;+;shadowed white latin cross
+271f;+;outlined latin cross
+2c2e;M;glagolitic capital letter latinate myslite
+2c5e;m;glagolitic small letter latinate myslite
 2c60;L;latin capital letter l with double bar
 2c61;l;latin small letter l with double bar
 2c62;L;latin capital letter l with middle tilde
@@ -1007,8 +1004,8 @@
 2c7c;j;latin subscript small letter j
 2c7e;S;latin capital letter s with swash tail
 2c7f;Z;latin capital letter z with swash tail
-a722;ALEF;latin capital letter egyptological alef
-a723;alef;latin small letter egyptological alef
+a722;A;latin capital letter egyptological alef
+a723;a;latin small letter egyptological alef
 a724;';latin capital letter egyptological ain
 a725;';latin small letter egyptological ain
 a726;H;latin capital letter heng
