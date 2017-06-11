@@ -1,18 +1,14 @@
 defmodule Unidecode do
   @moduledoc """
-  Documentation for Unidecode.
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Unidecode.hello
-      :world
-
   """
-  def hello do
-    :world
+  def unidecode(string) do
+    string
+  end
+
+  def decode(string) do
+    string
   end
 end
