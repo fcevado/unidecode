@@ -3,8 +3,8 @@ defmodule Unidecode.Mixfile do
 
   def project do
     [app: :unidecode,
-     version: "0.0.1",
-     elixir: "~> 1.4",
+     version: "0.0.2",
+     elixir: "~> 1.6",
      description: description(),
      source_url: "https://github.com/fcevado/unidecode",
      build_embedded: Mix.env == :prod,
@@ -41,7 +41,7 @@ defmodule Unidecode.Mixfile do
 
   defp deps do
     [
-      {:con_cache, "~> 0.12"},
+      {:con_cache, ">= 0.13.0"},
       {:ex_doc, "~> 0.16", only: :dev},
       {:earmark, "~> 1.2", only: :dev}
     ]
