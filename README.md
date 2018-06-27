@@ -6,7 +6,7 @@ It doesn't change encoding, as every string in Elixir, all results still are UTF
 But are they are easy to convert to ASCII. Let's say you have the word `código` that is the portuguese word for code, and try to convert it to a charlist.
 ```elixir
 iex> to_charlist("código")
-[99, 243, 100, 105, 103, 111] 
+[99, 243, 100, 105, 103, 111]
 ```
 
 Unicode is made to make this kind of operation give you better results.
@@ -16,7 +16,7 @@ iex> "código" |> Unidecode.decode |> to_charlist
 'codigo'
 ```
 
-This isn't the exact characters, but is readable and intelligible to anyone who speaks portuguese. 
+This isn't the exact characters, but is readable and intelligible to anyone who speaks portuguese.
 
 ## Installation
 
@@ -24,7 +24,7 @@ Add unidecode to your depencies and to extra applications
 
 ```elixir
 def deps do
-  [{:unidecode, "~> 0.1.0"}]
+  [{:unidecode, "~> 0.0.2"}]
 end
 
 def application do
@@ -40,7 +40,7 @@ As we all are used to:
  - create a branch for your contribution
  - add your commits(I try to stick with this pattern [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/))
  - create a PR for your changes
- 
+
 #### Where are room for contributions?
 
 We always want better documentation and, although this library has a small and concise documentation, anywhere you see that it can be improved it will be warmly welcomed.
