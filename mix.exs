@@ -4,7 +4,7 @@ defmodule Unidecode.Mixfile do
   def project do
     [
       app: :unidecode,
-      version: "0.0.2",
+      version: "1.0.0",
       elixir: "~> 1.6",
       description: description(),
       source_url: "https://github.com/fcevado/unidecode",
@@ -43,8 +43,8 @@ defmodule Unidecode.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, ">= 0.18.0", only: :dev},
-      {:earmark, ">= 1.2.0", only: :dev}
+      {:ex_doc, ">= 0.24.2", only: :dev},
+      {:earmark, ">= 1.4.12", only: :dev}
     ]
   end
 end
