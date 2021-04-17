@@ -4,6 +4,7 @@ An elixir implementation of [Text::Unidecode](http://search.cpan.org/~sburke/Tex
 
 It doesn't change encoding, as every string in Elixir, all results still are UTF8/Unicode characters.
 But are they are easy to convert to ASCII. Let's say you have the word `código` that is the portuguese word for code, and try to convert it to a charlist.
+
 ```elixir
 iex> to_charlist("código")
 [99, 243, 100, 105, 103, 111]
@@ -18,50 +19,43 @@ iex> "código" |> Unidecode.decode |> to_charlist
 
 This isn't the exact characters, but is readable and intelligible to anyone who speaks portuguese.
 
+## Design Philosophy(taken from original Unidecode perl library)
+
+Unidecode's ability to transliterate from a given language is limited by two factors:
+
+- The amount and quality of data in the written form of the original language
+  So if you have Hebrew data that has no vowel points in it, then Unidecode cannot guess what vowels should appear in a pronunciation.
+  S f y hv n vwls n th npt, y wn't gt ny vwls n th tpt.
+  (This is a specific application of the general principle of "Garbage In, Garbage Out".)
+
+- Basic limitations in the Unidecode design
+  Writing a real and clever transliteration algorithm for any single language usually requires a lot of time, and at least a passable knowledge of the language involved.
+  But Unicode text can convey more languages than I could possibly learn (much less create a transliterator for) in the entire rest of my lifetime.
+  So I put a cap on how intelligent Unidecode could be, by insisting that it support only context-insensitive transliteration.
+  That means missing the finer details of any given writing system, while still hopefully being useful.
+
+Unidecode, in other words, is quick and dirty.
+Sometimes the output is not so dirty at all: Russian and Greek seem to work passably; and while Thaana (Divehi, AKA Maldivian) is a definitely non-Western writing system, setting up a mapping from it to Roman letters seems to work pretty well.
+But sometimes the output is very dirty: Unidecode does quite badly on Japanese and Thai.
+
+If you want a smarter transliteration for a particular language than Unidecode provides, then you should look for (or write) a transliteration algorithm specific to that language, and apply it instead of (or at least before) applying Unidecode.
+
+In other words, Unidecode's approach is broad (knowing about dozens of writing systems), but shallow (not being meticulous about any of them).
+
 ## Installation
 
-Add unidecode to your depencies and to extra applications
+Add unidecode to your depencies
 
 ```elixir
 def deps do
-  [{:unidecode, "~> 0.0.2"}]
-end
-
-def application do
-  [extra_applications: [:logger, :unidecode],
-   mod: {YourApp.Application, []}]
+  [{:unidecode, "~> 1.0.0"}]
 end
 ```
-
-## Contributing
-
-As we all are used to:
- - fork
- - create a branch for your contribution
- - add your commits(I try to stick with this pattern [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/))
- - create a PR for your changes
-
-#### Where are room for contributions?
-
-We always want better documentation and, although this library has a small and concise documentation, anywhere you see that it can be improved it will be warmly welcomed.
-
-You can also help to add csv translitaration tables. Those tables are in `priv/unicode_data/`.
-Inside this folder will be a file with all unicode characters description called `UnicodeData.txt` and all the csv tables.
-Those tables have a simple structure: `{unicode code};{ascii char representation};{code description}`.
-I'm keeping the description so those csv files can be useful outside of this implementation context.
-To ease the work of dealing with `UnicodeData.txt` and csv files, I created a simple `mix task` to filter data from `UnicodeData.txt` and create a csv file.
-
-```shell
-$ mix generate_csv filename=caucasian_albanian include=caucasian,albanian exclude=control,indicator,input
-```
-
-After running this task you will have a file `priv/unicode_data/caucasian_albanian.csv`.
-All parameters are required, I strongly recommend to always use the exclude parameters as in this example.
-Now you just have to work on the csv to map correctly the unicode code to the nearest ascii char representation.
 
 ## [Changelog](./CHANGELOG.md)
 
 ## [Code of Conduct](./CODE_OF_CONDUCT.md)
 
 ## [License](./LICENSE)
+
 Unidecode is under Apache v2.0 license.
