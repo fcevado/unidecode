@@ -6,28 +6,20 @@ defmodule Unidecode do
   @doc """
   #TODO doc
   """
-  @spec unidecode(String.t) :: String.t
+  @spec unidecode(String.t()) :: String.t()
   def unidecode(string), do: transliterate(string)
 
   @doc """
   #TODO doc
   """
-  @spec unidecode(String.t) :: String.t
+  @spec decode(String.t()) :: String.t()
   def decode(string), do: transliterate(string)
 
-  @spec unidecode(String.t) :: String.t
+  @spec transliterate(String.t()) :: String.t()
   defp transliterate(string) do
     string
-    |> String.graphemes
-    |> Stream.map(&transliterate_char/1)
-    |> Enum.join
-  end
-
-  @spec unidecode(String.t) :: String.t
-  defp transliterate_char(char) do
-    case Unidecode.Cache.get(char) do
-      nil -> char
-      new_char -> new_char
-    end
+    |> String.graphemes()
+    |> Enum.map(&Unidecode.Decoder.decode/1)
+    |> Enum.join()
   end
 end
