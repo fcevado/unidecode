@@ -4,7 +4,7 @@ defmodule Unidecode.Mixfile do
   def project do
     [
       app: :unidecode,
-      version: "1.0.0",
+      version: "1.0.1",
       elixir: "~> 1.6",
       description: description(),
       source_url: "https://github.com/fcevado/unidecode",

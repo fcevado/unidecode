@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1
+
+- Fix missing u
+
 ## v1.0
 
 - Refactor Unidecode to use the same mapping of chars as other Unidecode libraries.
