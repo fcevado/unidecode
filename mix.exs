@@ -4,7 +4,7 @@ defmodule Unidecode.Mixfile do
   def project do
     [
       app: :unidecode,
-      version: "1.0.1",
+      version: "1.0.2",
       elixir: "~> 1.6",
       description: description(),
       source_url: "https://github.com/fcevado/unidecode",
@@ -32,7 +32,7 @@ defmodule Unidecode.Mixfile do
       name: :unidecode,
       files: ["priv", "lib/unidecode.ex", "lib/unidecode", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Flávio Moreira Vieira"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "Github" => "https://github.com/fcevado/unidecode",
         "Text::Unidecode(Original Perl Module)" =>
@@ -43,8 +43,7 @@ defmodule Unidecode.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, ">= 0.24.2", only: :dev},
-      {:earmark, ">= 1.4.12", only: :dev}
+      {:ex_doc, "~> 0.38", only: :dev}
     ]
   end
 end

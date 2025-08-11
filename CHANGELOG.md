@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.2
+
+- Fix wrong transliteration for [ and +
+
 ## v1.0.1
 
 - Fix missing u
