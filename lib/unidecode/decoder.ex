@@ -17,6 +17,10 @@ defmodule Unidecode.Decoder do
   @doc """
   Returns the transliteration of a single grapheme.
   ## Examples
+      iex> Unidecode.Decoder.decode("+")
+      "+"
+      iex> Unidecode.Decoder.decode("[")
+      "["
       iex> Unidecode.Decoder.decode("u")
       "u"
       iex> Unidecode.Decoder.decode("⠋")
